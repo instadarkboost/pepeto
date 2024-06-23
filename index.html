@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão Fujão</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        button, .link-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        button:hover, .link-button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vai me mandar foto dos pepetos hoje?</h1>
+        <img src="hj.png" alt="Imagem">
+        <div class="button-container">
+            <a href="https://youtube.com/shorts/jbeLllAzP-8?si=sR3SuRoZWZZzFKtU" class="link-button" id="sim">Sim</a>
+            <button id="nao">Não</button>
+        </div>
+    </div>
+
+    <script>
+        const botaoNao = document.getElementById('nao');
+
+        botaoNao.addEventListener('click', () => {
+            const x = Math.random() * (window.innerWidth - botaoNao.offsetWidth);
+            const y = Math.random() * (window.innerHeight - botaoNao.offsetHeight);
+            botaoNao.style.position = 'absolute';
+            botaoNao.style.left = `${x}px`;
+            botaoNao.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
